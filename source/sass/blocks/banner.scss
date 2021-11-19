@@ -1,0 +1,317 @@
+.banner {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.banner__list-wrap {
+  position: relative;
+}
+
+.banner__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.banner__item {
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  margin-bottom: 90px;
+  min-height: 58px;
+
+  &:nth-child(5n) {
+    margin-bottom: 70px;
+  }
+
+  &:last-child {
+    margin-bottom: 76px;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+}
+
+.banner__item--right {
+  justify-content: flex-end;
+}
+
+.first {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -78px;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/banner/menu-1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $transparent;
+  }
+}
+
+.second {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: -78px;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/banner/menu-2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $transparent;
+  }
+}
+
+.third {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -78px;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/banner/menu-3.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $transparent;
+  }
+}
+
+.fourth {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -78px;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/banner/menu-4.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $transparent;
+  }
+}
+
+.fifth{
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -78px;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/banner/menu-5.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $transparent;
+  }
+}
+
+.sixth {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: -78px;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/banner/menu-6.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $transparent;
+  }
+}
+
+.seventh {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: -78px;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/banner/menu-7.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $transparent;
+  }
+}
+
+.eighth {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: -78px;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/banner/menu-8.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $transparent;
+  }
+}
+
+.ninth {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: -78px;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/banner/menu-9.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $transparent;
+  }
+}
+
+.tenth {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: -78px;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/banner/menu-10.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $transparent;
+  }
+}
+
+.eleventh {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: -78px;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/banner/menu-11.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $transparent;
+  }
+}
+
+.twelfth {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: -78px;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/banner/menu-12.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $transparent;
+  }
+}
+
+.banner__text--left {
+  animation: slideUpLeft 2s forwards 4s;
+  display: inline-block;
+  transform: translateX(150%);
+  animation-delay: 4s;
+  opacity: 0;
+  max-width: 345px;
+  box-sizing: content-box;
+  text-decoration: none;
+  color: $white;
+}
+
+.banner__text--right {
+  animation: slideUpRight 2s forwards 4s;
+  display: inline-block;
+  text-align: right;
+  transform: translateX(-150%);
+  animation-delay: 4s;
+  opacity: 0;
+  max-width: 345px;
+  box-sizing: content-box;
+  text-decoration: none;
+  color: $white;
+}
+
+.banner__text--first {
+  margin-left: 122px;
+}
+
+.banner__text--second {
+  margin-left: 100px;
+}
+
+.banner__text--third {
+  margin-left: 79px;
+}
+
+.banner__text--fourth {
+  margin-right: 122px;
+}
+
+.banner__text--fifth {
+  margin-right: 100px;
+}
+
+.banner__text--sixth {
+  margin-right: 79px;
+}
+
+@keyframes slideUpLeft{
+  0% {
+    transform: translateX(150%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpRight{
+  0% {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}

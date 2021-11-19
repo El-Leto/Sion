@@ -1,0 +1,130 @@
+.footer {
+  background-color: $grey-darken;
+}
+
+.footer__wrap {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+  padding-bottom: 67px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -12%;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background-image: url('../img/logo-circle.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-color: $transparent;
+  }
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  margin-right: 70px;
+}
+
+.footer__link {
+  margin-bottom: 20px;
+  line-height: 0;
+}
+
+.footer__social {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 130px;
+}
+
+.footer__social-link {
+  display: block;
+  cursor: pointer;
+  color: $white-transparent;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.footer__contact-wrap {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.footer__contact-list {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__contact-item {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer__contact-link {
+  text-decoration: none;
+  color: $grey-light;;
+
+  &:hover {
+    font-weight: 700;
+  }
+}
+
+.footer__confidentiality {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  color: $grey;
+}
+
+.footer__text {
+  margin: 0;
+}
+
+.footer__nav {
+  margin: 0;
+  padding: 0;
+  max-width: 380px;
+  list-style: none;
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.footer__nav-item {
+  padding: 5px 0;
+}
+
+.footer__nav-link {
+  text-decoration: none;
+  color: $white;
+
+  &:active {
+    font-weight: 700;
+  }
+  &:hover {
+    font-weight: 700;
+  }
+}
+
+.footer__form {
+  width: 325px;
+  margin: 0 160px;
+}

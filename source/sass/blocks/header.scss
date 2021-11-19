@@ -1,0 +1,150 @@
+.header {
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: $grey-darken;
+  color: $white;
+  overflow: hidden;
+}
+
+.header__wrap {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 103px;
+
+  &--page {
+    margin-bottom: 83px;
+  }
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__link {
+  padding-left: 6px;
+  padding-right: 24px;
+  line-height: 0;
+}
+
+.header__text {
+  max-width: 277px;
+  font-size: 15px;
+  line-height: 21px;
+  font-weight: 500;
+  margin: 0;
+  padding-top: 7px;
+}
+
+.header__contacts {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.contacts__phone-wrap {
+  position: relative;
+}
+
+.contacts__button {
+  display: block;
+  margin-right: 39px;
+  cursor: pointer;
+
+  &--phone {
+    width: 28px;
+    height: 28px;
+    padding: 20px 0;
+    background-image: url("../img/svg/phone.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &:hover {
+      background-image: url("../img/svg/phone-cover.svg");
+    }
+  }
+
+  &--phone-opened {
+    background-image: url("../img/svg/phone-cover.svg");
+  }
+
+  &--mail {
+    width: 28px;
+    height: 28px;
+    background-image: url("../img/svg/mail.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+  }
+}
+
+.contacts-list {
+  z-index: 3;
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 236px;
+  box-sizing: border-box;
+  top: 62px;
+  left: -102px;
+  line-height: 24px;
+  font-weight: 500;
+  color: $grey-dark;
+  background-color: $white;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 20px 41px;
+
+  &--closed {
+    display: none;
+  }
+
+  &--opened {
+    display: block;
+  }
+}
+
+.contacts-item {
+  padding-bottom: 8px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.contacts-link {
+  display: block;
+  text-decoration: none;
+  color: $grey-dark;
+
+  &:hover {
+    color: $black;
+  }
+}
+
+.button__callback {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: $white;
+  border: 2px solid $white;
+  padding: 13px 25px;
+  font-weight: 500;
+
+  &:hover {
+    color: $grey-dark;
+    background-color: $white;
+  }
+
+  &:active {
+    color: $grey-dark;
+    background-color: $white;
+  }
+}

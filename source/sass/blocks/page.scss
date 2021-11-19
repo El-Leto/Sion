@@ -1,0 +1,16 @@
+.page {
+  font-family: $main-font;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #000000;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.page__body {
+  margin: 0;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100%;
+}
