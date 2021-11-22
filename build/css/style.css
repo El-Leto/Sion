@@ -130,12 +130,13 @@
   .contacts__button--mail {
     width: 28px;
     height: 28px;
+    padding: 20px 0;
     background-image: url("../img/svg/mail.svg");
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: center;
     background-size: contain; }
 
-.contacts-list {
+.contacts-list-phone {
   z-index: 3;
   position: absolute;
   list-style: none;
@@ -152,9 +153,31 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   padding: 20px 41px; }
-  .contacts-list--closed {
+  .contacts-list-phone--closed {
     display: none; }
-  .contacts-list--opened {
+  .contacts-list-phone--opened {
+    display: block; }
+
+.contacts-list-mail {
+  z-index: 3;
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 273px;
+  box-sizing: border-box;
+  top: 62px;
+  left: -62px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #4b4b4b;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 20px 41px; }
+  .contacts-list-mail--closed {
+    display: none; }
+  .contacts-list-mail--opened {
     display: block; }
 
 .contacts-item {
@@ -184,6 +207,12 @@
   .button__callback:active {
     color: #4b4b4b;
     background-color: #ffffff; }
+
+.mail-text {
+  font-size: 10px; }
+  .mail-text--footer {
+    margin: 0;
+    color: #bfbfbf; }
 
 .nav {
   display: flex;
@@ -628,11 +657,11 @@
   .main__description-wrap--right {
     transform: translate(200%, 0px);
     opacity: 0;
-    transition: all 2s ease 0s; }
+    transition: all 1.3s ease 0s; }
   .main__description-wrap--left {
     transform: translate(-200%, 0px);
     opacity: 0;
-    transition: all 2s ease 0s; }
+    transition: all 1.3s ease 0s; }
 
 .main__description-wrap.active {
   transform: translate(0px, 0px);
@@ -757,11 +786,12 @@
 .footer__social {
   margin-top: 20px;
   margin-bottom: 20px;
+  margin-left: 30px;
   padding: 0;
   list-style: none;
   display: flex;
   justify-content: space-between;
-  width: 130px; }
+  width: 70px; }
 
 .footer__social-link {
   display: block;

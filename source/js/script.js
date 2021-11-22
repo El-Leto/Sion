@@ -2,8 +2,11 @@ const navButton = document.querySelector('.nav__dropdown-button');
 const navDropdown = document.querySelector('.nav__dropdown');
 const navExtra = document.querySelector('.nav__extra');
 const phoneButton = document.querySelector('.contacts__button--phone');
-const phoneList = document.querySelector('.contacts-list');
+const mailButton = document.querySelector('.contacts__button--mail');
+const phoneList = document.querySelector('.contacts-list-phone');
+const mailList = document.querySelector('.contacts-list-mail');
 const phoneWrap = document.querySelector('.contacts__phone-wrap');
+const mailWrap = document.querySelector('.contacts__mail-wrap');
 const sliderBorder = document.querySelectorAll('.slider__border');
 const animateItems =  document.querySelectorAll('.animation');
 
@@ -20,15 +23,27 @@ navDropdown.addEventListener('mouseleave', function() {
 });
 
 phoneWrap.addEventListener('mouseenter', function() {
-  phoneList.classList.remove('contacts-list--closed');
-  phoneList.classList.add('contacts-list--opened');
+  phoneList.classList.remove('contacts-list-phone--closed');
+  phoneList.classList.add('contacts-list-phone--opened');
   phoneButton.classList.add('contacts__button--phone-opened');
 });
 
 phoneWrap.addEventListener('mouseleave', function() {
-  phoneList.classList.add('contacts-list--closed');
-  phoneList.classList.remove('contacts-list--opened');
+  phoneList.classList.add('contacts-list-phone--closed');
+  phoneList.classList.remove('contacts-list-phone--opened');
   phoneButton.classList.remove('contacts__button--phone-opened');
+});
+
+mailWrap.addEventListener('mouseenter', function() {
+  mailList.classList.remove('contacts-list-mail--closed');
+  mailList.classList.add('contacts-list-mail--opened');
+  mailButton.classList.add('contacts__button--phone-opened');
+});
+
+mailWrap.addEventListener('mouseleave', function() {
+  mailList.classList.add('contacts-list-mail--closed');
+  mailList.classList.remove('contacts-list-mail--opened');
+  mailButton.classList.remove('contacts__button--phone-opened');
 });
 
 function initSlider(elem, duration) {
@@ -77,7 +92,7 @@ if (animateItems.length > 0) {
       const animationItem = animateItems[i];
       const animationItemHeight = animationItem.offsetHeight;
       const animationItemOffset = offset(animationItem).top;
-      const animationStart = 4;
+      const animationStart = 8;
 
       let animationPoint = window.innerHeight - animationItemHeight / animationStart;
       if (animationItemHeight > window.innerHeight) {
