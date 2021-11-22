@@ -696,6 +696,8 @@
   flex-wrap: wrap;
   list-style: none;
   list-style-image: url(../img/svg/star.svg); }
+  .main__list--extra {
+    width: 710px; }
 
 .main__item {
   margin-bottom: 15px;
@@ -704,7 +706,7 @@
   .main__item:nth-child(-n+3) {
     margin-right: 50px; }
   .main__item--extra {
-    width: 350px; }
+    width: 710px; }
 
 .main__advantage {
   display: grid;

@@ -91,6 +91,10 @@
   flex-wrap: wrap;
   list-style: none;
   list-style-image: url(../img/svg/star.svg);
+
+  &--extra {
+    width: 710px;
+  }
 }
 
 .main__item {
@@ -103,7 +107,7 @@
   }
 
   &--extra {
-    width: 350px;
+    width: 710px;
   }
 }
 
