@@ -703,6 +703,8 @@
   box-sizing: content-box; }
   .main__item:nth-child(-n+3) {
     margin-right: 50px; }
+  .main__item--extra {
+    width: 350px; }
 
 .main__advantage {
   display: grid;
