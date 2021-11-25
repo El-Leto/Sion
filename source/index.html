@@ -337,12 +337,12 @@
         <div class="footer__form">
           <h3 class="form__title">Получите консультацию</h3>
           <p class="form__text">Оставьте заявку на консультацию и наш менеджер с Вами свяжется</p>
-          <form action="#" class="form form_footer">
+          <form action="#" id="formfooter" class="form form_footer">
             <label class="form__label">
-              <input type="text" class="form__input" required name="name" placeholder="Имя" aria-label="Ваше имя" value="">
+              <input type="text" class="form__input required-footer" name="name" placeholder="Имя" aria-label="Ваше имя" value="">
             </label>
             <label class="form__label">
-              <input type="tel" class="form__input" required name="phone" placeholder="Телефон" aria-label="Номер телефона" value="">
+              <input type="tel" class="form__input required-footer" name="phone" placeholder="Телефон" aria-label="Номер телефона" value="">
             </label>
             <button type="submit" class="form__button">Заказать консультацию</button>
           </form>
@@ -353,23 +353,23 @@
       <div class="modal__wrapper">
         <form action="#" id="form" class="form__modal">
           <h1 class="modal__title">Оставьте заявку и наш менеджер с Вами свяжется</h1>
+          <button type="button" class="modal__close" aria-label="Закрыть"><span class="visually-hidden">Закрыть</span></button>
           <div class="modal__item">
-            <label for="name" class="modal__label">ФИО: </label>
-            <input id="name" type="text" class="modal__input required" required name="name" placeholder="Имя" aria-label="Ваше имя" value="">
+            <label for="name" class="modal__label">ФИО* :</label>
+            <input id="name" type="text" class="modal__input required" name="name" placeholder="Имя" aria-label="Ваше имя" value="">
           </div>
           <div class="modal__item">
-            <label for="phone" class="modal__label">Телефон: </label>
-            <input id="phone" type="tel" class="modal__input phone required" required name="phone" placeholder="Телефон" aria-label="Номер телефона" value="">
+            <label for="phone" class="modal__label">Телефон* :</label>
+            <input id="phone" type="tel" class="modal__input phone required" name="phone" placeholder="Телефон" aria-label="Номер телефона" value="">
           </div>
           <div class="modal__item">
-            <label for="company" class="modal__label">Фирма/ организация: </label>
+            <label for="company" class="modal__label">Фирма/организация:</label>
             <input id="company" type="text" class="modal__input" name="company" placeholder="Название" aria-label="Название организации/компании" value="">
           </div>
           <button type="submit" class="modal__button">Заказать звонок</button>
         </form>
       </div>
-
     </section>
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>

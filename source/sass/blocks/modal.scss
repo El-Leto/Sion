@@ -130,3 +130,17 @@
     background-color: $grey-dark;
   }
 }
+
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  background-image: url('../img/svg/close.svg');
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+}
