@@ -76,6 +76,8 @@ const copy = (done) => {
     "source/css/normalize.min.css",
     "source/*.ico",
     "source/img/**/*.{jpg,png,svg,gif}",
+    "source/phpmailer/**",
+    "source/sendmail.php",
   ], {
     base: "source"
   })

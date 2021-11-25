@@ -33,7 +33,7 @@
   $mail->Body = $body;
 
   if (!$mail->send()) {
-    $message = 'Ошибка 222';
+    $message = 'Ошибка';
   } else {
     $message = 'Данные отправлены!';
   }
