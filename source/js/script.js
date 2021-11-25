@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let formData = new FormData(form);
 
-    if(error === 0) {
+    if (error === 0) {
       modalWrapper.classList.add('sending');
       let response = await fetch('sendmail.php', {
         method: 'POST',
@@ -158,11 +158,11 @@ document.addEventListener('DOMContentLoaded', function () {
         form.reset();
         modalWrapper.classList.remove('sending');
       } else {
-          alert('Ошибка');
+          alert(response.status);
           modalWrapper.classList.remove('sending');
       }
     } else {
-        alert('Заполните обязательные поля');
+      alert('Test');
     }
   }
 

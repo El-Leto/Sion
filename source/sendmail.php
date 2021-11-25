@@ -11,8 +11,8 @@
   $mail->IsHTML(true);
 
   //от кого
-  //$mail->setForm('sion@liftsouz.ru', 'Заявка');
-  $mail->setForm('lizok-kom@rambler.ru', 'Заявка');
+  //$mail->setFrom('sion@liftsouz.ru', 'Заявка');
+  $mail->setFrom('lizok-kom@rambler.ru', 'Заявка');
   //кому
   //$mail->addAddress('sion@liftsouz.ru');
   $mail->addAddress('elleto.life@gmail.com');
@@ -20,20 +20,20 @@
 
   $body = '<h1>Новая заявка на консультацию!</h1>';
 
-  if(trim(!empty($POST['name']))){
+  if(trim(!empty($_POST['name']))){
     $body.='<p><strong>ФИО:</strong> '.$_POST['name'].'</p>';
   }
-  if(trim(!empty($POST['phone']))){
+  if(trim(!empty($_POST['phone']))){
     $body.='<p><strong>Телефон:</strong> '.$_POST['phone'].'</p>';
   }
-  if(trim(!empty($POST['company']))){
+  if(trim(!empty($_POST['company']))){
     $body.='<p><strong>Компания:</strong> '.$_POST['company'].'</p>';
   }
 
   $mail->Body = $body;
 
   if (!$mail->send()) {
-    $message = 'Ошибка';
+    $message = 'Ошибка 222';
   } else {
     $message = 'Данные отправлены!';
   }
