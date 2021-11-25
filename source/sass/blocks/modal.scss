@@ -1,0 +1,132 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 300;
+  margin: auto;
+  background-color: rgba($white, 0.6);
+}
+
+.modal--open {
+  display: block;
+}
+
+.modal__wrapper {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 566px;;
+  height: 545px;
+  border-top: 1px solid $grey-border;
+  border-bottom: 1px solid $grey-border;
+  box-shadow: 0 5px 10px rgba(0, 1, 1, 0.25);
+  background-color: $white;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $white-transparent url('../img/spinner.gif') center / 50px no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease 0s;
+  }
+}
+
+.modal__wrapper.sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form__modal {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.modal__title {
+  margin: 0;
+  margin-bottom: 20px;
+  line-height: 22px;
+  font-size: 22px;
+  text-align: center;
+  padding: 0 50px;
+}
+
+.modal__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.modal__label {
+  margin-bottom: 10px;
+}
+
+.modal__input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: $transparent;
+  border: 1px solid $grey-border;
+  padding: 18px 20px;
+  margin-bottom: 15px;
+  color: $black;
+  
+  &::-webkit-input-placeholder {
+    color: $grey;
+  }
+
+  &::-moz-placeholder {
+    color: $grey;
+  }
+
+  &::placeholder {
+    color: $grey;
+  }
+
+  &:hover {
+    outline: 2px solid $white;
+  }
+
+  &:focus {
+    outline: 2px solid $white;
+  }
+
+  &:active {
+    outline: 2px solid $white;
+  }
+}
+
+.modal__input.error {
+  box-shadow: 0 0 5px red;
+}
+
+.modal__button {
+  margin-top: 14px;
+  padding: 17px 49px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  color: $grey-darken;
+  border: 2px solid $grey-dark;
+
+  &:hover {
+    color: $white;
+    background-color: $grey-dark;
+  }
+
+  &:active {
+    color: $white;
+    background-color: $grey-dark;
+  }
+}

@@ -50,6 +50,10 @@
   }
 }
 
+.form__input.error {
+  box-shadow: 0 0 5px red;
+}
+
 .form__button {
   margin-top: 14px;
   padding: 17px 49px;
@@ -58,4 +62,15 @@
   font-weight: 500;
   cursor: pointer;
   color: $grey-darken;
+  border: 2px solid $grey-dark;
+
+  &:hover {
+    color: $white;
+    background-color: $grey-dark;
+  }
+
+  &:active {
+    color: $white;
+    background-color: $grey-dark;
+  }
 }
