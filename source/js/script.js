@@ -12,6 +12,7 @@ const animateItems =  document.querySelectorAll('.animation');
 const modalArea = document.querySelector('.modal');
 const modalWrapper = document.querySelector('.modal__wrapper');
 const orders = document.querySelectorAll('.order');
+const page = document.querySelector('.page');
 
 navDropdown.addEventListener('mouseenter', function() {
   navExtra.classList.remove('nav__extra--closed');
@@ -53,6 +54,7 @@ for (let i = 0; i < orders.length; i++) {
   orders[i].addEventListener ('click', function(evt) {
     evt.preventDefault();
     modalArea.classList.add('modal--open');
+    page.classList.add('page-modal');
   });
 }
 
@@ -211,12 +213,14 @@ modalArea.onmousedown = function (evt) {
   let modalWrapper = modalArea.getElementsByClassName('modal__wrapper')[0];
   if (target.closest('.' + modalWrapper.className) === null) {
     this.classList.remove('modal--open');
+    page.classList.remove('page-modal');
   }
 };
 
 document.addEventListener("keydown", (evt) => {
   if (evt.key === "Escape") {
     modalArea.classList.remove('modal--open');
+    page.classList.remove('page-modal');
   }
 });
   
