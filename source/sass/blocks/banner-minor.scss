@@ -65,6 +65,10 @@
   &--fire {
     margin: 30px 0;
   }
+
+  &--fire-bottom {
+    margin: 0 0 30px 0;
+  }
 }
 
 .banner__desc-list {
@@ -85,6 +89,15 @@
   margin-bottom: 25px;
 
   &--fire {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--fire-top {
+    margin-top: 15px;
     margin-bottom: 15px;
 
     &:last-child {

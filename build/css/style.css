@@ -701,7 +701,8 @@
   list-style: none;
   list-style-image: url(../img/svg/star.svg); }
   .main__list--extra {
-    width: 710px; }
+    width: 710px;
+    max-height: 600px; }
 
 .main__item {
   margin-bottom: 15px;
@@ -1091,6 +1092,8 @@
   line-height: 22px; }
   .banner__desc-text--fire {
     margin: 30px 0; }
+  .banner__desc-text--fire-bottom {
+    margin: 0 0 30px 0; }
 
 .banner__desc-list {
   margin: 0;
@@ -1108,6 +1111,11 @@
   .banner__desc-item--fire {
     margin-bottom: 15px; }
     .banner__desc-item--fire:last-child {
+      margin-bottom: 0; }
+  .banner__desc-item--fire-top {
+    margin-top: 15px;
+    margin-bottom: 15px; }
+    .banner__desc-item--fire-top:last-child {
       margin-bottom: 0; }
 
 .banner__desc-button {
