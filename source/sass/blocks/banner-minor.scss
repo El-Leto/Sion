@@ -48,8 +48,8 @@
 
 .banner__desc-title {
   margin: 18px 0;
-  font-size: 60px;
-  line-height: 73px;
+  font-size: 40px;
+  line-height: 53px;
   font-weight: 700;
 
   &--fire {
@@ -58,8 +58,8 @@
 }
 
 .banner__desc-text {
-  margin: 42px 0;
-  font-size: 18px;
+  margin: 25px 0;
+  font-size: 16px;
   line-height: 22px;
 
   &--fire {
@@ -73,11 +73,11 @@
 
 .banner__desc-list {
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   padding-left: 20px;
   list-style: none;
   list-style-image: url(../img/svg/star-white.svg);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 22px;
 
   &--fire {
@@ -86,7 +86,7 @@
 }
 
 .banner__desc-item {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 
   &--fire {
     margin-bottom: 15px;
