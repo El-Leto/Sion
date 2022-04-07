@@ -23,9 +23,15 @@ navDropdown.addEventListener('mouseenter', function() {
 });
 
 navDropdown.addEventListener('touchstart', function() {
-  navExtra.classList.remove('nav__extra--closed');
-  navExtra.classList.add('nav__extra--opened');
-  navButton.classList.add('nav__dropdown-button--opened');
+  if (navExtra.classList.contains('nav__extra--closed')) {
+    navExtra.classList.remove('nav__extra--closed');
+    navExtra.classList.add('nav__extra--opened');
+    navButton.classList.add('nav__dropdown-button--opened');
+  } else {
+    navExtra.classList.add('nav__extra--closed');
+    navExtra.classList.remove('nav__extra--opened');
+    navButton.classList.remove('nav__dropdown-button--opened');
+  }
 });
 
 navDropdown.addEventListener('mouseleave', function() {
