@@ -22,6 +22,12 @@ navDropdown.addEventListener('mouseenter', function() {
   navButton.classList.add('nav__dropdown-button--opened');
 });
 
+navDropdown.addEventListener('touchstart', function() {
+  navExtra.classList.remove('nav__extra--closed');
+  navExtra.classList.add('nav__extra--opened');
+  navButton.classList.add('nav__dropdown-button--opened');
+});
+
 navDropdown.addEventListener('mouseleave', function() {
   navExtra.classList.add('nav__extra--closed');
   navExtra.classList.remove('nav__extra--opened');
