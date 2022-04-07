@@ -142,7 +142,7 @@ if (animateItems.length > 0) {
  }, 100);
 }
 
-//send formModal
+//send formModal?
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('form');
 

@@ -246,10 +246,10 @@
 }
 
 .banner__text--left {
-  animation: slideUpLeft 2s forwards 4s;
+  animation: slideUpLeft 2s forwards 2s;
   display: inline-block;
   transform: translateX(150%);
-  animation-delay: 4s;
+  animation-delay: 2s;
   opacity: 0;
   max-width: 345px;
   box-sizing: content-box;
@@ -258,11 +258,11 @@
 }
 
 .banner__text--right {
-  animation: slideUpRight 2s forwards 4s;
+  animation: slideUpRight 2s forwards 2s;
   display: inline-block;
   text-align: right;
   transform: translateX(-150%);
-  animation-delay: 4s;
+  animation-delay: 2s;
   opacity: 0;
   max-width: 345px;
   box-sizing: content-box;
