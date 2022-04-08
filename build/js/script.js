@@ -15,54 +15,70 @@ const orders = document.querySelectorAll('.order');
 const page = document.querySelector('.page');
 const modalClose = document.querySelector('.modal__close');
 
+const body = document.querySelector('body');
+
 //menu
-navDropdown.addEventListener('mouseenter', function() {
-  navExtra.classList.remove('nav__extra--closed');
-  navExtra.classList.add('nav__extra--opened');
-  navButton.classList.add('nav__dropdown-button--opened');
-});
+// navDropdown.addEventListener('mouseenter', function() {
+//   navExtra.classList.remove('nav__extra--closed');
+//   navExtra.classList.add('nav__extra--opened');
+//   navButton.classList.add('nav__dropdown-button--opened');
+// });
 
-navDropdown.addEventListener('touchstart', function() {
-  if (navExtra.classList.contains('nav__extra--closed')) {
-    navExtra.classList.remove('nav__extra--closed');
-    navExtra.classList.add('nav__extra--opened');
-    navButton.classList.add('nav__dropdown-button--opened');
-  } else {
-    navExtra.classList.add('nav__extra--closed');
-    navExtra.classList.remove('nav__extra--opened');
-    navButton.classList.remove('nav__dropdown-button--opened');
-  }
-});
+// navDropdown.addEventListener('touchstart', function() {
+//   if (navExtra.classList.contains('nav__extra--closed')) {
+//     navExtra.classList.remove('nav__extra--closed');
+//     navExtra.classList.add('nav__extra--opened');
+//     navButton.classList.add('nav__dropdown-button--opened');
+//   } else {
+//     navExtra.classList.add('nav__extra--closed');
+//     navExtra.classList.remove('nav__extra--opened');
+//     navButton.classList.remove('nav__dropdown-button--opened');
+//   }
+// });
 
-navDropdown.addEventListener('mouseleave', function() {
-  navExtra.classList.add('nav__extra--closed');
-  navExtra.classList.remove('nav__extra--opened');
-  navButton.classList.remove('nav__dropdown-button--opened');
-});
+// navDropdown.addEventListener('mouseleave', function() {
+//   navExtra.classList.add('nav__extra--closed');
+//   navExtra.classList.remove('nav__extra--opened');
+//   navButton.classList.remove('nav__dropdown-button--opened');
+// });
 
-phoneWrap.addEventListener('mouseenter', function() {
-  phoneList.classList.remove('contacts-list-phone--closed');
-  phoneList.classList.add('contacts-list-phone--opened');
-  phoneButton.classList.add('contacts__button--phone-opened');
-});
+// phoneWrap.addEventListener('mouseenter', function() {
+//   phoneList.classList.remove('contacts-list-phone--closed');
+//   phoneList.classList.add('contacts-list-phone--opened');
+//   phoneButton.classList.add('contacts__button--phone-opened');
+// });
 
-phoneWrap.addEventListener('mouseleave', function() {
-  phoneList.classList.add('contacts-list-phone--closed');
-  phoneList.classList.remove('contacts-list-phone--opened');
-  phoneButton.classList.remove('contacts__button--phone-opened');
-});
+// phoneWrap.addEventListener('mouseleave', function() {
+//   phoneList.classList.add('contacts-list-phone--closed');
+//   phoneList.classList.remove('contacts-list-phone--opened');
+//   phoneButton.classList.remove('contacts__button--phone-opened');
+// });
 
-mailWrap.addEventListener('mouseenter', function() {
-  mailList.classList.remove('contacts-list-mail--closed');
-  mailList.classList.add('contacts-list-mail--opened');
-  mailButton.classList.add('contacts__button--phone-opened');
-});
+// mailWrap.addEventListener('mouseenter', function() {
+//   mailList.classList.remove('contacts-list-mail--closed');
+//   mailList.classList.add('contacts-list-mail--opened');
+//   mailButton.classList.add('contacts__button--phone-opened');
+// });
 
-mailWrap.addEventListener('mouseleave', function() {
-  mailList.classList.add('contacts-list-mail--closed');
-  mailList.classList.remove('contacts-list-mail--opened');
-  mailButton.classList.remove('contacts__button--phone-opened');
-});
+// mailWrap.addEventListener('mouseleave', function() {
+//   mailList.classList.add('contacts-list-mail--closed');
+//   mailList.classList.remove('contacts-list-mail--opened');
+//   mailButton.classList.remove('contacts__button--phone-opened');
+// });
+
+let isMobile = {
+	Android: function() {return navigator.userAgent.match(/Android/i);},
+	BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
+	iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);},
+	Opera: function() {return navigator.userAgent.match(/Opera Mini/i);},
+	Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
+	any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
+};
+
+isMobile.any() ? (body.classList.add('touch'), navDropdown.addEventListener('click', function(){
+  navExtra.classList.toggle('nav__extra--open');
+  navButton.classList.toggle('nav__dropdown-button--opened');
+})) : body.classList.add('mouse');
 
 //add Modal
 
