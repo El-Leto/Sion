@@ -80,6 +80,11 @@ isMobile.any() ? (body.classList.add('touch'), navDropdown.addEventListener('cli
   navButton.classList.toggle('nav__dropdown-button--opened');
 })) : body.classList.add('mouse');
 
+isMobile.any() ? (body.classList.add('touch'), phoneWrap.addEventListener('click', function(){
+  phoneList.classList.toggle('contacts-list-phone--open');
+  phoneButton.classList.toggle('contacts__button--phone-opened');
+})) : body.classList.add('mouse');
+
 //add Modal
 
 for (let i = 0; i < orders.length; i++) {

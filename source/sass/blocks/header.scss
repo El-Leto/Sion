@@ -101,12 +101,9 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   padding: 20px 41px;
+  display: none;
 
-  &--closed {
-    display: none;
-  }
-
-  &--opened {
+  &--open {
     display: block;
   }
 }
@@ -184,4 +181,12 @@
     margin: 0;
     color: $grey-light;
   }
+}
+
+body.mouse .contacts__phone-wrap:hover .contacts-list-phone  {
+  display: block;
+}
+
+body.touch .contacts-list-phone--open  {
+  display: block;
 }
