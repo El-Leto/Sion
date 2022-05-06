@@ -71,7 +71,7 @@
         <div class="header__contacts">
           <div class="contacts__phone-wrap">
             <a class="contacts__button contacts__button--phone" aria-label="Телефоны"></a>
-            <ul class="contacts-list contacts-list-phone contacts-list-phone--closed">
+            <ul class="contacts-list contacts-list-phone">
               <li class="contacts-item">
                 <a class="contacts-link" href="tel:+74991643665">+ 7(499)164-3665</a>
               </li>
@@ -85,7 +85,7 @@
           </div>
           <div class="contacts__mail-wrap">
             <a class="contacts__button contacts__button--mail" aria-label="Почта"></a>
-            <ul class="contacts-list contacts-list-mail contacts-list-mail--closed">
+            <ul class="contacts-list contacts-list-mail">
               <li class="contacts-item">
                 <a class="contacts-link" href="mailto:sion@liftsouz.ru">sion@liftsouz.ru</a>
                 <span class="mail-text">общая почта</span>
@@ -112,7 +112,7 @@
           <h1 class="banner__desc-title banner__desc-title--fire">Системы контроля и управления доступом, домофония</h1>
           <p class="banner__desc-text banner__desc-text--fire">Шлагбаумы, домофоны, ворота, турникеты и др.</p>
           <p class="banner__desc-text banner__desc-text--fire-bottom">Система контроля и управления доступом (СКУД) определяет режимные установки объекта в ограничении и регистрации входа/проезда-выхода/выезда (людей, транспорта) на объекте через установленные "контрольные точки прохода".</p>
-          <button class="banner__desc-button banner__desc-button--fire" type="button order">Заказать звонок</button>
+          <button class="banner__desc-button banner__desc-button--fire order" type="button">Заказать звонок</button>
         </div>
       </div>
     </header>
@@ -285,7 +285,7 @@
             <label class="form__label">
               <input type="tel" class="form__input required-footer" name="phone" placeholder="Телефон" aria-label="Номер телефона" value="">
             </label>
-            <button type="submit" class="form__button">Заказать консультацию</button>
+            <button type="submit" class="form__button order">Заказать консультацию</button>
           </form>
         </div>
       </div>
@@ -297,20 +297,32 @@
           <button type="button" class="modal__close" aria-label="Закрыть"><span class="visually-hidden">Закрыть</span></button>
           <div class="modal__item">
             <label for="name" class="modal__label">ФИО* :</label>
-            <input id="name" type="text" class="modal__input required" name="name" placeholder="Имя" aria-label="Ваше имя" value="">
+            <input id="name" type="text" class="modal__input required" name="name" placeholder="Имя" aria-label="Ваше имя" value="" required>
           </div>
           <div class="modal__item">
             <label for="phone" class="modal__label">Телефон* :</label>
-            <input id="phone" type="tel" class="modal__input phone required" name="phone" placeholder="Телефон" aria-label="Номер телефона" value="">
+            <input id="phone" pattern="([\+]*[7-8]{1}\s?[\(]*9[0-9]{2}[\)]*\s?\d{3}[-]*\d{2}[-]*\d{2})" type="text" class="modal__input phone required" name="tel" placeholder="Телефон" aria-label="Номер телефона" value="" title="+70000000000" required>
+          </div>
+          <div class="modal__item">
+            <label for="email" class="modal__label">E-mail :</label>
+            <input id="email" type="text" class="modal__input phone required" name="email" placeholder="Телефон" aria-label="Номер телефона" value="">
           </div>
           <div class="modal__item">
             <label for="company" class="modal__label">Фирма/организация:</label>
-            <input id="company" type="text" class="modal__input" name="company" placeholder="Название" aria-label="Название организации/компании" value="">
+            <input id="company" type="text" class="modal__input" name="comment" placeholder="Название" aria-label="Название организации/компании" value="">
           </div>
           <button type="submit" class="modal__button">Заказать звонок</button>
         </form>
       </div>
     </section>
     <script src="js/script.min.js"></script>
+    <script>
+      document.querySelector('.form__modal').onsubmit = function () {
+          if (!grecaptcha.getResponse()) {
+               alert('Вы не заполнили поле Я не робот!');
+               return false;
+          }
+      }
+    </script>
   </body>
 </html>

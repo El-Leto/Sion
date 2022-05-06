@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
   use PHPMailer\PHPMailer\PHPMailer;
   use PHPMailer\PHPMailer\Exception;
 
@@ -42,4 +42,47 @@
 
   header('Content-type: application/json');
   echo json_encode($response);
+?> -->
+
+<?php
+$name = $_POST['name'];
+$phone = $_POST['tel'];
+$email = $_POST['email'];
+$comment = htmlentities($_POST["comment"]);
+$header = array(
+  "MIME-Version: 1.0",
+  "Content-Type: text/html;charset=utf-8"
+);
+
+$to  = "<elleto.life@gmail.com>, " ; 
+$to .= "<info@oldoc.ru>"; 
+
+$response = $_POST["g-recaptcha-response"];
+$url = 'https://www.google.com/recaptcha/api/siteverify';
+$data = [
+  'secret' => '6LehJ4UfAAAAACKpQNVSE1RspTlO_UmUqiO-r7JG',
+  'response' => $_POST["g-recaptcha-response"]
+];
+$options = [
+  'http' => [
+    'method' => 'POST',
+    'content' => http_build_query($data)
+  ]
+];
+$context  = stream_context_create($options);
+$verify = file_get_contents($url, false, $context);
+$captcha_success=json_decode($verify);
+if ($captcha_success->success==false) {
+  echo "Ты робот!";
+} else if ($captcha_success->success==true) {
+  mail($to, "Заявка с сайта", "Имя: ".$name."
+  Телефон: ".$phone."
+  E-mail: ".$email."
+  Текст сообщения: ".$comment,implode("\r\n", $header));
+
+  $redirect = isset($_SERVER['HTTP_REFERER'])? $_SERVER['HTTP_REFERER']:'index.html';
+  header("Location: $redirect");
+  echo "сообщение успешно отправлено";
+}
+exit();
 ?>

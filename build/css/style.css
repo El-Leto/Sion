@@ -64,11 +64,16 @@
   margin: 0 auto;
   max-width: 1440px;
   padding-left: 10px;
-  padding-right: 10px; }
-  @media (max-width: 1229px) {
+  padding-right: 10px;
+  box-sizing: border-box; }
+  @media (max-width: 1279px) {
+    .container {
+      min-width: 1024px;
+      max-width: 1100px; } }
+  @media (max-width: 1023px) {
     .container {
       min-width: 768px;
-      max-width: 1100px; } }
+      max-width: 1023px; } }
   @media (max-width: 767px) {
     .container {
       min-width: 320px;
@@ -76,6 +81,18 @@
   .container--add {
     margin: 0 auto;
     max-width: 1240px; }
+    @media (max-width: 1279px) {
+      .container--add {
+        min-width: 1024px;
+        max-width: 1100px; } }
+    @media (max-width: 1023px) {
+      .container--add {
+        min-width: 768px;
+        max-width: 1023px; } }
+    @media (max-width: 767px) {
+      .container--add {
+        min-width: 320px;
+        max-width: 767px; } }
 
 .header {
   background-image: url("../img/background.jpg");
@@ -132,8 +149,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain; }
-    .contacts__button--phone:hover {
-      background-image: url("../img/svg/phone-cover.svg"); }
   .contacts__button--phone-opened {
     background-image: url("../img/svg/phone-cover.svg"); }
   .contacts__button--mail {
@@ -182,10 +197,9 @@
   background-color: #ffffff;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
-  padding: 20px 41px; }
-  .contacts-list-mail--closed {
-    display: none; }
-  .contacts-list-mail--opened {
+  padding: 20px 41px;
+  display: none; }
+  .contacts-list-mail--open {
     display: block; }
 
 .contacts-item {
@@ -226,6 +240,15 @@ body.mouse .contacts__phone-wrap:hover .contacts-list-phone {
   display: block; }
 
 body.touch .contacts-list-phone--open {
+  display: block; }
+
+body.mouse .contacts__button--phone:hover {
+  background-image: url("../img/svg/phone-cover.svg"); }
+
+body.mouse .contacts__mail-wrap:hover .contacts-list-mail {
+  display: block; }
+
+body.touch .contacts-list-mail--open {
   display: block; }
 
 .nav {
@@ -291,7 +314,7 @@ body.touch .contacts-list-phone--open {
   line-height: 24px;
   font-weight: 500;
   color: #4b4b4b;
-  padding-top: 15px;
+  padding-top: 6px;
   padding-left: 10px;
   display: none; }
 
@@ -329,6 +352,9 @@ body.touch .contacts-list-phone--open {
 
 body.mouse .nav__dropdown:hover .nav__extra {
   display: block; }
+
+body.mouse .nav__dropdown:hover .nav__dropdown-button {
+  transform: rotate(180deg); }
 
 body.touch .nav__extra--open {
   display: block; }
@@ -534,10 +560,9 @@ body.touch .nav__extra--open {
   background-color: rgba(0, 0, 0, 0); }
 
 .banner__text--left {
-  animation: slideUpLeft 2s forwards 2s;
+  animation: slideUpLeft 2s forwards;
   display: inline-block;
   transform: translateX(150%);
-  animation-delay: 2s;
   opacity: 0;
   max-width: 345px;
   box-sizing: content-box;
@@ -545,11 +570,10 @@ body.touch .nav__extra--open {
   color: #ffffff; }
 
 .banner__text--right {
-  animation: slideUpRight 2s forwards 2s;
+  animation: slideUpRight 2s forwards;
   display: inline-block;
   text-align: right;
   transform: translateX(-150%);
-  animation-delay: 2s;
   opacity: 0;
   max-width: 345px;
   box-sizing: content-box;
@@ -625,7 +649,7 @@ body.touch .nav__extra--open {
   top: -10%;
   left: -10%;
   animation: rotates 10s linear infinite;
-  animation-delay: 1.7s; }
+  animation-delay: 0.3s; }
 
 @keyframes rotates {
   0% {
@@ -924,7 +948,7 @@ body.touch .nav__extra--open {
 
 .form__button {
   margin-top: 14px;
-  padding: 17px 49px;
+  padding: 17px 25px;
   font-size: 18px;
   line-height: 22px;
   font-weight: 500;
@@ -961,7 +985,7 @@ body.touch .nav__extra--open {
   bottom: 0;
   margin: auto;
   width: 566px;
-  height: 545px;
+  height: 648px;
   border-top: 1px solid #d8d8d8;
   border-bottom: 1px solid #d8d8d8;
   box-shadow: 0 5px 10px rgba(0, 1, 1, 0.25);

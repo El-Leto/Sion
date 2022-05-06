@@ -17,55 +17,6 @@ const modalClose = document.querySelector('.modal__close');
 
 const body = document.querySelector('body');
 
-//menu
-// navDropdown.addEventListener('mouseenter', function() {
-//   navExtra.classList.remove('nav__extra--closed');
-//   navExtra.classList.add('nav__extra--opened');
-//   navButton.classList.add('nav__dropdown-button--opened');
-// });
-
-// navDropdown.addEventListener('touchstart', function() {
-//   if (navExtra.classList.contains('nav__extra--closed')) {
-//     navExtra.classList.remove('nav__extra--closed');
-//     navExtra.classList.add('nav__extra--opened');
-//     navButton.classList.add('nav__dropdown-button--opened');
-//   } else {
-//     navExtra.classList.add('nav__extra--closed');
-//     navExtra.classList.remove('nav__extra--opened');
-//     navButton.classList.remove('nav__dropdown-button--opened');
-//   }
-// });
-
-// navDropdown.addEventListener('mouseleave', function() {
-//   navExtra.classList.add('nav__extra--closed');
-//   navExtra.classList.remove('nav__extra--opened');
-//   navButton.classList.remove('nav__dropdown-button--opened');
-// });
-
-// phoneWrap.addEventListener('mouseenter', function() {
-//   phoneList.classList.remove('contacts-list-phone--closed');
-//   phoneList.classList.add('contacts-list-phone--opened');
-//   phoneButton.classList.add('contacts__button--phone-opened');
-// });
-
-// phoneWrap.addEventListener('mouseleave', function() {
-//   phoneList.classList.add('contacts-list-phone--closed');
-//   phoneList.classList.remove('contacts-list-phone--opened');
-//   phoneButton.classList.remove('contacts__button--phone-opened');
-// });
-
-// mailWrap.addEventListener('mouseenter', function() {
-//   mailList.classList.remove('contacts-list-mail--closed');
-//   mailList.classList.add('contacts-list-mail--opened');
-//   mailButton.classList.add('contacts__button--phone-opened');
-// });
-
-// mailWrap.addEventListener('mouseleave', function() {
-//   mailList.classList.add('contacts-list-mail--closed');
-//   mailList.classList.remove('contacts-list-mail--opened');
-//   mailButton.classList.remove('contacts__button--phone-opened');
-// });
-
 let isMobile = {
 	Android: function() {return navigator.userAgent.match(/Android/i);},
 	BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
@@ -75,15 +26,40 @@ let isMobile = {
 	any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
 };
 
-isMobile.any() ? (body.classList.add('touch'), navDropdown.addEventListener('click', function(){
+isMobile.any() ? (body.classList.add('touch'), navDropdown.addEventListener('click', function() {
+  if (phoneList.classList.contains('contacts-list-phone--open') || mailList.classList.contains('contacts-list-mail--open')) {
+    phoneList.classList.remove('contacts-list-phone--open');
+    phoneButton.classList.remove('contacts__button--phone-opened');
+    mailList.classList.remove('contacts-list-mail--open');
+    mailButton.classList.remove('contacts__button--phone-opened');
+  }
   navExtra.classList.toggle('nav__extra--open');
   navButton.classList.toggle('nav__dropdown-button--opened');
 })) : body.classList.add('mouse');
 
-isMobile.any() ? (body.classList.add('touch'), phoneWrap.addEventListener('click', function(){
+isMobile.any() ? (body.classList.add('touch'), phoneWrap.addEventListener('click', function() {
+  if (navExtra.classList.contains('nav__extra--open') || mailList.classList.contains('contacts-list-mail--open')) {
+    navExtra.classList.remove('nav__extra--open');
+    navButton.classList.remove('nav__dropdown-button--opened');
+    mailList.classList.remove('contacts-list-mail--open');
+    mailButton.classList.remove('contacts__button--phone-opened');
+  }
   phoneList.classList.toggle('contacts-list-phone--open');
   phoneButton.classList.toggle('contacts__button--phone-opened');
 })) : body.classList.add('mouse');
+
+isMobile.any() ? (body.classList.add('touch'), mailWrap.addEventListener('click', function() {
+  if (phoneList.classList.contains('contacts-list-phone--open') || navExtra.classList.contains('nav__extra--open')) {
+    phoneList.classList.remove('contacts-list-phone--open');
+    phoneButton.classList.remove('contacts__button--phone-opened');
+    navExtra.classList.remove('nav__extra--open');
+    navButton.classList.remove('nav__dropdown-button--opened');
+  }
+  mailList.classList.toggle('contacts-list-mail--open');
+  mailButton.classList.toggle('contacts__button--phone-opened');
+})) : body.classList.add('mouse');
+
+
 
 //add Modal
 
@@ -175,146 +151,146 @@ if (animateItems.length > 0) {
  }, 100);
 }
 
-//send formModal?
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('form');
+// //send formModal?
+// document.addEventListener('DOMContentLoaded', function () {
+//   const form = document.getElementById('form');
 
-  form.addEventListener('submit', formSend);
+//   form.addEventListener('submit', formSend);
 
-  async function formSend(evt) {
-    evt.preventDefault();
+//   async function formSend(evt) {
+//     evt.preventDefault();
 
-    let error = formValidate(form);
+//     let error = formValidate(form);
 
-    let formData = new FormData(form);
+//     let formData = new FormData(form);
 
-    if (error === 0) {
-      modalWrapper.classList.add('sending');
-      let response = await fetch('sendmail.php', {
-        method: 'POST',
-        body: formData
-      });
-      if (response.ok) {
-        let result = await response.json();
-        alert(result.message);
-        form.reset();
-        modalWrapper.classList.remove('sending');
-      } else {
-          alert(response.status);
-          modalWrapper.classList.remove('sending');
-      }
-    } else {
-      alert('Test');
-    }
-  }
+//     if (error === 0) {
+//       modalWrapper.classList.add('sending');
+//       let response = await fetch('sendmail.php', {
+//         method: 'POST',
+//         body: formData
+//       });
+//       if (response.ok) {
+//         let result = await response.json();
+//         alert(result.message);
+//         form.reset();
+//         modalWrapper.classList.remove('sending');
+//       } else {
+//           alert(response.status);
+//           modalWrapper.classList.remove('sending');
+//       }
+//     } else {
+//       alert('Test');
+//     }
+//   }
 
-  function formValidate(form) {
-    let error = 0;
-    let formReq = document.querySelectorAll('.required')
+//   function formValidate(form) {
+//     let error = 0;
+//     let formReq = document.querySelectorAll('.required')
 
-    for (let i = 0; i < formReq.length; i++) {
-      const input = formReq[i];
-      formRemoveError(input);
+//     for (let i = 0; i < formReq.length; i++) {
+//       const input = formReq[i];
+//       formRemoveError(input);
       
-      if(input.classList.contains('phone')) {
-        if (phoneTest(input)) {
-          formAddError(input);
-          error++;
-        }
-      } else {
-        if (input.value === '') {
-          formAddError(input);
-          error++;
-        }
-      }
-    }
-    return error;
-  }
+//       if(input.classList.contains('phone')) {
+//         if (phoneTest(input)) {
+//           formAddError(input);
+//           error++;
+//         }
+//       } else {
+//         if (input.value === '') {
+//           formAddError(input);
+//           error++;
+//         }
+//       }
+//     }
+//     return error;
+//   }
   
 
-  function formAddError(input) {
-    input.parentElement.classList.add('error');
-    input.classList.add('error');
-  }
+//   function formAddError(input) {
+//     input.parentElement.classList.add('error');
+//     input.classList.add('error');
+//   }
 
-  function formRemoveError(input) {
-    input.parentElement.classList.remove('error');
-    input.classList.remove('error');
-  }
+//   function formRemoveError(input) {
+//     input.parentElement.classList.remove('error');
+//     input.classList.remove('error');
+//   }
 
-  function phoneTest(input) {
-    return !/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(input.value);
-  }
-});
+//   function phoneTest(input) {
+//     return !/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(input.value);
+//   }
+// });
 
-//send formFooter
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('formfooter');
+// //send formFooter
+// document.addEventListener('DOMContentLoaded', function () {
+//   const form = document.getElementById('formfooter');
 
-  form.addEventListener('submit', formSend);
+//   form.addEventListener('submit', formSend);
 
-  async function formSend(evt) {
-    evt.preventDefault();
+//   async function formSend(evt) {
+//     evt.preventDefault();
 
-    let error = formValidate(form);
+//     let error = formValidate(form);
 
-    let formData = new FormData(form);
+//     let formData = new FormData(form);
 
-    if (error === 0) {
-      let response = await fetch('sendmail.php', {
-        method: 'POST',
-        body: formData
-      });
-      if (response.ok) {
-        let result = await response.json();
-        alert(result.message);
-        form.reset();
-      } else {
-          alert(response.status);
-      }
-    } else {
-      alert('Test');
-    }
-  }
+//     if (error === 0) {
+//       let response = await fetch('sendmail.php', {
+//         method: 'POST',
+//         body: formData
+//       });
+//       if (response.ok) {
+//         let result = await response.json();
+//         alert(result.message);
+//         form.reset();
+//       } else {
+//           alert(response.status);
+//       }
+//     } else {
+//       alert('Test');
+//     }
+//   }
 
-  function formValidate(form) {
-    let error = 0;
-    let formReq = document.querySelectorAll('.required-footer')
+//   function formValidate(form) {
+//     let error = 0;
+//     let formReq = document.querySelectorAll('.required-footer')
 
-    for (let i = 0; i < formReq.length; i++) {
-      const input = formReq[i];
-      formRemoveError(input);
+//     for (let i = 0; i < formReq.length; i++) {
+//       const input = formReq[i];
+//       formRemoveError(input);
       
-      if(input.classList.contains('phone')) {
-        if (phoneTest(input)) {
-          formAddError(input);
-          error++;
-        }
-      } else {
-        if (input.value === '') {
-          formAddError(input);
-          error++;
-        }
-      }
-    }
-    return error;
-  }
+//       if(input.classList.contains('phone')) {
+//         if (phoneTest(input)) {
+//           formAddError(input);
+//           error++;
+//         }
+//       } else {
+//         if (input.value === '') {
+//           formAddError(input);
+//           error++;
+//         }
+//       }
+//     }
+//     return error;
+//   }
   
 
-  function formAddError(input) {
-    input.parentElement.classList.add('error');
-    input.classList.add('error');
-  }
+//   function formAddError(input) {
+//     input.parentElement.classList.add('error');
+//     input.classList.add('error');
+//   }
 
-  function formRemoveError(input) {
-    input.parentElement.classList.remove('error');
-    input.classList.remove('error');
-  }
+//   function formRemoveError(input) {
+//     input.parentElement.classList.remove('error');
+//     input.classList.remove('error');
+//   }
 
-  function phoneTest(input) {
-    return !/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(input.value);
-  }
-});
+//   function phoneTest(input) {
+//     return !/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(input.value);
+//   }
+// });
 
 //closeModal
 modalArea.onmousedown = function (evt) {
