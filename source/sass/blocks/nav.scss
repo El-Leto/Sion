@@ -1,6 +1,20 @@
 .nav {
   display: flex;
   padding-top: 6px;
+
+  @media (max-width: $min-desktop-width) {
+    display: none;
+
+    &--opened {
+      position: absolute;
+      top: 79px;
+      right: 0;
+      z-index: 100;
+      background-color: $white;
+      display: block;
+      min-width: 300px;
+    }
+  }
 }
 
 .nav__list {
@@ -11,6 +25,14 @@
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;
+
+  @media (max-width: $desktop-width) {
+    font-size: 18px;
+  }
+
+  @media (max-width: $min-desktop-width) {
+    flex-direction: column;
+  }
 }
 
 .nav__item {
@@ -27,6 +49,10 @@
 .nav__link {
   text-decoration: none;
   color: $white;
+
+  @media (max-width: $min-desktop-width) {
+    color: $grey-dark;
+  }
 
   &--active {
     font-weight: 700;
@@ -88,6 +114,7 @@
   padding: 10px;
   position: relative;
   padding-left: 40px;
+  margin-top: -2px;
 
   &::before {
     content: '';

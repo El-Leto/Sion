@@ -29,6 +29,11 @@
       -webkit-transition: opacity ease-in-out 0.3s ;
       -moz-transition: opacity ease-in-out 0.3s ;
   }
+
+  @media (max-width: $desktop-width) {
+    width: 480px;
+    height: auto;
+  }
 }
 
 .slider__border {

@@ -18,6 +18,10 @@
   font-size: 18px;
   line-height: 26px;
   font-weight: 700;
+
+  @media (max-width: $desktop-width) {
+    font-size: 16px;
+  }
 }
 
 .banner__item {
@@ -270,26 +274,50 @@
 
 .banner__text--first {
   margin-left: 122px;
+
+  @media (max-width: $desktop-width) {
+    margin-left: 82px;
+  }
 }
 
 .banner__text--second {
   margin-left: 100px;
+
+  @media (max-width: $desktop-width) {
+    margin-left: 50px;
+  }
 }
 
 .banner__text--third {
   margin-left: 79px;
+
+  @media (max-width: $desktop-width) {
+    margin-left: 30px;
+  }
 }
 
 .banner__text--fourth {
   margin-right: 122px;
+
+  @media (max-width: $desktop-width) {
+    margin-right: 82px;
+  }
 }
 
 .banner__text--fifth {
   margin-right: 100px;
+
+  @media (max-width: $desktop-width) {
+    margin-right: 50px;
+  }
 }
 
 .banner__text--sixth {
   margin-right: 79px;
+
+  @media (max-width: $desktop-width) {
+    margin-right: 30px;
+  }
 }
 
 @keyframes slideUpLeft{

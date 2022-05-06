@@ -14,6 +14,8 @@ const modalWrapper = document.querySelector('.modal__wrapper');
 const orders = document.querySelectorAll('.order');
 const page = document.querySelector('.page');
 const modalClose = document.querySelector('.modal__close');
+const menuButton = document.querySelector('.header__menu-button');
+const navList = document.querySelector('.nav');
 
 const body = document.querySelector('body');
 
@@ -151,6 +153,24 @@ if (animateItems.length > 0) {
   animationOnScroll();
  }, 100);
 }
+
+//menu-open
+
+const toggle = () => {
+  menuButton.classList.toggle('header__menu-button--closed');
+  navList.classList.toggle('nav--opened');
+}
+
+const close = () => {
+  menuButton.classList.add('header__menu-button--closed');
+  navList.classList.remove('nav--opened');
+}
+
+document.addEventListener('click', function(evt) {
+  const target = evt.target;
+
+  target === menuButton ? toggle() : target !== navList ? close() : false;
+});
 
 // //send formModal?
 // document.addEventListener('DOMContentLoaded', function () {

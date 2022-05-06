@@ -6,7 +6,7 @@
   margin-top: 100px;
   margin-bottom: 100px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   align-items: center;
 
   &--minor {
@@ -16,15 +16,42 @@
 
     &:first-child {
       margin-top: 150px;
+
+      @media (max-width: $desktop-width) {
+        margin-top: 50px;
+      }
     }
 
     &:last-child {
       margin-bottom: 150px;
+
+      @media (max-width: $desktop-width) {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  &--right {
+    @media (max-width: $desktop-width) {
+      grid-template-columns: 1fr 450px;
+    }
+  }
+
+  &--left {
+    @media (max-width: $desktop-width) {
+      grid-template-columns: 450px 1fr;
     }
   }
 }
 
 .main__image-wrap {
+  display: block;
+
+  @media (max-width: $desktop-width) {
+    display: flex;
+    justify-content: center;
+  }
+
   &--left {
     text-align: right;
   }
@@ -33,6 +60,10 @@
 .main__image {
   max-width: 100%;
   height: auto;
+
+  @media (max-width: $desktop-width) {
+    width: 450px;
+  }
 }
 
 .main__description-wrap {
@@ -40,6 +71,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+
+  @media (max-width: $desktop-width) {
+    padding-left: 10px;
+    align-items: center;
+  }
 
   &--right {
     transform: translate(200%, 0px);
@@ -68,12 +104,22 @@
   font-size: 40px;
   line-height: 49px;
   margin: 30px 0;
+
+  @media (max-width: $desktop-width) {
+    font-size: 36px;
+  }
+
 }
 
 .main__text {
   margin: 0;
   margin-bottom: 36px;
   max-width: 550px;
+
+  @media (max-width: $desktop-width) {
+    font-size: 14px;
+    max-width: 544px;
+  }
 }
 
 .main__advantages-list {
@@ -93,9 +139,18 @@
   list-style: none;
   list-style-image: url(../img/svg/star.svg);
 
+  @media (max-width: $desktop-width) {
+    font-size: 14px;
+    width: 240px;
+  }
+
   &--extra {
     width: 550px;
     max-height: 600px;
+
+    @media (max-width: $desktop-width) {
+      max-width: 524px;
+    }
   }
 
   &--add {
@@ -108,8 +163,16 @@
   width: 285px;
   box-sizing: content-box;
 
+  @media (max-width: $desktop-width) {
+    width: 250px;
+  }
+
   &--extra {
     width: 550px;
+
+    @media (max-width: $desktop-width) {
+      width: 524px;
+    }
   }
 }
 
@@ -118,6 +181,10 @@
   grid-template-columns: 1fr 1fr;
   max-width: 700px;
   margin-bottom: 20px;
+
+  @media (max-width: $desktop-width) {
+    max-width: 544px;
+  }
 
   &--minor {
     margin-bottom: 60px;
@@ -145,10 +212,18 @@
   text-align: center;
   color: $white;
   -webkit-text-stroke: 1px $black;
+
+  @media (max-width: $desktop-width) {
+    font-size: 40px;
+  }
 }
 
 .main__advantage-text {
   margin: 0;
+
+  @media (max-width: $desktop-width) {
+    font-size: 14px;
+  }
 }
 
 .main__button {

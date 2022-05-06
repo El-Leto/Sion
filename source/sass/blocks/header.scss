@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 65px;
+  position: relative;
 
   &--page {
     margin-bottom: 40px;
@@ -38,6 +39,10 @@
   font-weight: 500;
   margin: 0;
   padding-top: 7px;
+
+  @media (max-width: $desktop-width) {
+    font-size: 14px;
+  }
 }
 
 .header__contacts {
@@ -156,6 +161,11 @@
   padding: 13px 25px;
   font-weight: 500;
 
+
+  @media (max-width: $desktop-width) {
+    padding: 13px 18px;
+  }
+
   &:hover {
     color: $grey-dark;
     background-color: $white;
@@ -173,6 +183,31 @@
   &--footer {
     margin: 0;
     color: $grey-light;
+  }
+}
+
+.header__menu-button {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: $transparent;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-image: url('../img/svg/menu-close.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+
+  @media (max-width: $min-desktop-width) {
+    display: block;
+  }
+
+  &--closed {
+    background-image: url('../img/svg/menu-open.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
   }
 }
 

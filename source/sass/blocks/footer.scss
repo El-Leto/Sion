@@ -28,6 +28,10 @@
   display: flex;
   flex-direction: column;
   margin-right: 70px;
+
+  @media (max-width: $desktop-width) {
+    margin-right: 30px;
+  }
 }
 
 .footer__link {
@@ -60,6 +64,10 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
+
+  @media (max-width: $desktop-width) {
+    font-size: 14px;
+  }
 }
 
 .footer__contact-list {
@@ -92,6 +100,10 @@
   line-height: 17px;
   font-weight: 500;
   color: $grey;
+
+  @media (max-width: $desktop-width) {
+    font-size: 12px;
+  }
 }
 
 .footer__text {
@@ -107,6 +119,12 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
+
+  @media (max-width: $desktop-width) {
+    font-size: 14px;
+    line-height: 24px;
+    max-width: 350px;
+  }
 }
 
 .footer__nav-item {
@@ -128,4 +146,9 @@
 .footer__form {
   width: 325px;
   margin: 0 160px;
+
+  @media (max-width: $desktop-width) {
+    width: 280px;
+    margin: 0 auto;
+  }
 }
