@@ -8,6 +8,10 @@
   @media (max-width: $desktop-width) {
     font-size: 20px;
   }
+
+  @media (max-width: $min-desktop-width) {
+    text-align: center;
+  }
 }
 
 .form__text {
@@ -16,6 +20,10 @@
 
   @media (max-width: $desktop-width) {
     font-size: 14px;
+  }
+
+  @media (max-width: $min-desktop-width) {
+    text-align: center;
   }
 }
 

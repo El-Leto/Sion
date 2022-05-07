@@ -21,6 +21,16 @@
       background-position: center;
       background-size: cover;
       background-color: $transparent;
+    }
+
+  @media (max-width: $min-desktop-width) {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
+    
+    &::after {
+      top: -5%;
+    }
   }
 }
 
@@ -31,6 +41,12 @@
 
   @media (max-width: $desktop-width) {
     margin-right: 30px;
+  }
+
+  @media (max-width: $min-desktop-width) {
+    margin-right: 0;
+    align-items: center;
+    margin-bottom: 30px;
   }
 }
 
@@ -150,5 +166,9 @@
   @media (max-width: $desktop-width) {
     width: 280px;
     margin: 0 auto;
+  }
+
+  @media (max-width: $min-desktop-width) {
+    margin-top: 30px;
   }
 }

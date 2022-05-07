@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+
+  @media (max-width: $min-desktop-width) {
+    display: none;
+  }
 }
 
 .banner__list-wrap {

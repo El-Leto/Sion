@@ -41,6 +41,14 @@
     @media (max-width: $desktop-width) {
       grid-template-columns: 450px 1fr;
     }
+
+    @media (max-width: $min-desktop-width) {
+      grid-template-columns: 240px 1fr;
+    }
+  }
+
+  @media (max-width: $min-desktop-width) {
+    margin-top: 20px;
   }
 }
 
@@ -109,6 +117,10 @@
     font-size: 36px;
   }
 
+  @media (max-width: $min-desktop-width) {
+    margin: 10px 0;
+  }
+
 }
 
 .main__text {
@@ -119,6 +131,10 @@
   @media (max-width: $desktop-width) {
     font-size: 14px;
     max-width: 544px;
+  }
+
+  @media (max-width: $min-desktop-width) {
+    font-size: 13px;
   }
 }
 
@@ -144,6 +160,11 @@
     width: 240px;
   }
 
+  @media (max-width: $min-desktop-width) {
+    width: 210px;
+    font-size: 13px;
+  }
+
   &--extra {
     width: 550px;
     max-height: 600px;
@@ -165,6 +186,11 @@
 
   @media (max-width: $desktop-width) {
     width: 250px;
+  }
+
+  @media (max-width: $min-desktop-width) {
+    width: 225px;
+    
   }
 
   &--extra {
@@ -216,6 +242,10 @@
   @media (max-width: $desktop-width) {
     font-size: 40px;
   }
+
+  @media (max-width: $min-desktop-width) {
+    font-size: 30px;
+  }
 }
 
 .main__advantage-text {
@@ -223,6 +253,10 @@
 
   @media (max-width: $desktop-width) {
     font-size: 14px;
+  }
+
+  @media (max-width: $min-desktop-width) {
+    font-size: 13px;
   }
 }
 
@@ -244,5 +278,9 @@
   &:active {
     color: $white;
     background-color: $grey-dark;
+  }
+
+  @media (max-width: $min-desktop-width) {
+    font-size: 16px;
   }
 }

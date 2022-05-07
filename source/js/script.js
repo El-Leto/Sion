@@ -15,7 +15,10 @@ const orders = document.querySelectorAll('.order');
 const page = document.querySelector('.page');
 const modalClose = document.querySelector('.modal__close');
 const menuButton = document.querySelector('.header__menu-button');
-const navList = document.querySelector('.nav');
+const nav = document.querySelector('.nav');
+const navList = document.querySelector('.nav__list');
+const navDrop = document.querySelector('.nav__dropdown');
+const navLink = document.querySelector('.nav__link--drop');
 
 const body = document.querySelector('body');
 
@@ -158,19 +161,26 @@ if (animateItems.length > 0) {
 
 const toggle = () => {
   menuButton.classList.toggle('header__menu-button--closed');
-  navList.classList.toggle('nav--opened');
+  nav.classList.toggle('nav--opened');
+  navExtra.classList.remove('nav__extra--open');
+  console.log('test');
 }
 
 const close = () => {
   menuButton.classList.add('header__menu-button--closed');
-  navList.classList.remove('nav--opened');
+  nav.classList.remove('nav--opened');
+  navExtra.classList.remove('nav__extra--open');
+  console.log('test1');
 }
 
 document.addEventListener('click', function(evt) {
   const target = evt.target;
 
-  target === menuButton ? toggle() : target !== navList ? close() : false;
+  console.log(target);
+
+  target === menuButton ? toggle() : target !== navLink ? close() : false;
 });
+
 
 // //send formModal?
 // document.addEventListener('DOMContentLoaded', function () {

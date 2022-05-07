@@ -6,13 +6,15 @@
     display: none;
 
     &--opened {
-      position: absolute;
-      top: 79px;
-      right: 0;
       z-index: 100;
       background-color: $white;
-      display: block;
-      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+      width: 100%;
+      border-radius: 10px;
+      order: 4;
+      margin-top: 10px;
     }
   }
 }
@@ -32,6 +34,8 @@
 
   @media (max-width: $min-desktop-width) {
     flex-direction: column;
+    font-size: 15px;
+    line-height: 20px;
   }
 }
 
@@ -44,6 +48,10 @@
   &:last-child {
     margin-right: 0;
   }
+
+  @media (max-width: $min-desktop-width) {
+    padding: 10px 10px;
+  }
 }
 
 .nav__link {
@@ -52,10 +60,30 @@
 
   @media (max-width: $min-desktop-width) {
     color: $grey-dark;
+    width: 100%;
+    display: inline-block;
   }
 
   &--active {
     font-weight: 700;
+  }
+
+  &--drop {
+    @media (max-width: $min-desktop-width) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 17px;
+        left: 80px;
+        width: 12px;
+        height: 8px;
+        background-image: url('../img/svg/nav-mobile.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-color: $transparent;
+      }
+    }
   }
 
   &:active {
@@ -71,6 +99,11 @@
   position: relative;
   display: flex;
   align-items: center;
+
+  @media (max-width: $min-desktop-width) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .nav__dropdown-button {
@@ -86,6 +119,10 @@
 
   &--opened {
     transform: rotate(180deg);
+  }
+
+  @media (max-width: $min-desktop-width) {
+    display: none;
   }
 }
 
@@ -106,6 +143,15 @@
   padding-top: 6px;
   padding-left: 10px;
   display: none;
+
+  @media (max-width: $min-desktop-width) {
+    padding-left: 0;
+    padding-top: 10px;
+    width: 290px;
+    font-size: 14px;
+    line-height: 18px;
+    position: static;
+  }
 }
 
 .nav__extra-item {
@@ -115,6 +161,11 @@
   position: relative;
   padding-left: 40px;
   margin-top: -2px;
+
+  @media (max-width: $min-desktop-width) {
+    border-radius: 0;
+    padding-left: 20px;
+  }
 
   &::before {
     content: '';
@@ -129,6 +180,10 @@
     background-position: center;
     background-size: cover;
     background-color: $transparent;
+
+    @media (max-width: $min-desktop-width) {
+      left: 5px;
+    }
   }
 
   &--active {
@@ -145,6 +200,10 @@
 
   &:first-child {
     border-radius: 10px 10px 0 0;
+
+    @media (max-width: $min-desktop-width) {
+      border-radius: 0;
+    }
   }
 }
 
