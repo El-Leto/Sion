@@ -11,6 +11,10 @@
 .page-modal {
   overflow-y: hidden;
   padding-right: 17px;
+
+  @media (max-width: $min-desktop-width) {
+    padding-right: 0;
+  }
 }
 
 .page__body {

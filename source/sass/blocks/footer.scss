@@ -32,6 +32,10 @@
       top: -5%;
     }
   }
+
+  @media (max-width: $tablet-width) {
+    padding-top: 70px;
+  }
 }
 
 .footer__contacts {

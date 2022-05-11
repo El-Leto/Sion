@@ -15,6 +15,10 @@
     background-size: 500% auto;
     background-position: top center;
   }
+
+  @media (max-width: $tablet-width) {
+    background-size: 700% auto;
+  }
 }
 
 .header__wrap {
